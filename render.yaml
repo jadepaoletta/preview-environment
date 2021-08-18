@@ -9,6 +9,10 @@ services:
   buildCommand: cd backend && yarn
   startCommand: cd backend && yarn start
   envVars:
+    - key: DB_CONNECTION_STRING
+        fromDatabase:
+          name: postgres_db
+          property: connectionString
     - fromGroup: "My cool group"
 - type: web
   name: render-todo
@@ -38,7 +42,3 @@ envVarGroups:
       - key: MY_API_KEY
         value: production-api-key
         previewValue: test-api-key
-      - key: DB_CONNECTION_STRING
-        fromDatabase:
-          name: postgres_db
-          property: connectionString
