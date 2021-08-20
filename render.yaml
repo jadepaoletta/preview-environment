@@ -4,7 +4,7 @@ services:
 - type: web
   plan: starter plus
   previewPlan: starter
-  name: new.express-backend.yes
+  name: new.express-backend.yes.test
   env: node
   buildCommand: cd backend && yarn
   startCommand: cd backend && yarn start
