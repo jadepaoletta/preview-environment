@@ -25,7 +25,7 @@ services:
   - key: REACT_APP_API_HOST
     fromService:
       type: web
-      name: express-backend
+      name: new.express-backend.yes
       property: host
 databases:
 - name: postgres_db
