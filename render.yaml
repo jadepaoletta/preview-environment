@@ -4,7 +4,7 @@ services:
 - type: web
   plan: starter plus
   previewPlan: starter
-  name: new.express-backend.yes.test
+  name: express-backend
   env: node
   buildCommand: cd backend && yarn
   startCommand: cd backend && yarn start
@@ -25,7 +25,7 @@ services:
   - key: REACT_APP_API_HOST
     fromService:
       type: web
-      name: new.express-backend.yes.test
+      name: express-backend
       property: host
 databases:
 - name: postgres_db
