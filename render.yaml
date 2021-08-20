@@ -9,11 +9,13 @@ services:
   buildCommand: cd backend && yarn
   startCommand: cd backend && yarn start
   envVars:
-    - key: DB_CONNECTION_STRING
-        fromDatabase:
-          name: postgres_db
-          property: connectionString
-    - fromGroup: "My cool group"
+  - key: MY_API_KEY
+    value: production-api-key
+    previewValue: test-api-key
+  - key: DB_CONNECTION_STRING
+    fromDatabase:
+      name: postgres_db
+      property: connectionString
 - type: web
   name: render-todo
   env: static
@@ -31,14 +33,3 @@ databases:
   user: test_user
   plan: standard
   previewPlan: starter
-
-envVarGroups:
-  - name: "My cool group"
-    envVars:
-      - key: ENVIRONMENT
-        value: production
-      - key: THIS_IS_A_TEST_KEY
-        sync: false
-      - key: MY_API_KEY
-        value: production-api-key
-        previewValue: test-api-key
